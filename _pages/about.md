@@ -4,8 +4,21 @@ title: About Me
 permalink: /about/
 ---
 
-This website is powered by **[fastpages](https://github.com/fastai/fastpages)** [^1].
+> 블라블라
 
+블라블라블라블라
 
+## About us
+ㄴㅇㄴㅇㄴㅇㄴㅇ
+ㄴㄴㅇㄴㅇㄴㅇㄴㄴㅇㄴㅇㅇㄴㅇㄴㅇㄴㅇ
 
-[^1]:a blogging platform that natively supports Jupyter notebooks in addition to other formats.
+## 니냐니노
+ㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱㄱ
+ㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹㄹ
+
+### 냉면
+
+둥둥탁둥둥탁
+
+### 제주코딩베이스캠프
+라라라랄라라

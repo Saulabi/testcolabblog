@@ -4,17 +4,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Sample | hello world!</title>
+<title>gitInfo | hello world!</title>
 <meta name="generator" content="Jekyll v4.1.1" />
-<meta property="og:title" content="Sample" />
+<meta property="og:title" content="gitInfo" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
 <meta property="og:description" content="An easy to use blogging platform with support for Jupyter Notebooks." />
-<link rel="canonical" href="https://saulabi.github.io/testcolabblog/sample/" />
-<meta property="og:url" content="https://saulabi.github.io/testcolabblog/sample/" />
+<link rel="canonical" href="https://saulabi.github.io/testcolabblog/gitInfo/" />
+<meta property="og:url" content="https://saulabi.github.io/testcolabblog/gitInfo/" />
 <meta property="og:site_name" content="hello world!" />
 <script type="application/ld+json">
-{"url":"https://saulabi.github.io/testcolabblog/sample/","@type":"WebPage","headline":"Sample","description":"An easy to use blogging platform with support for Jupyter Notebooks.","@context":"https://schema.org"}</script>
+{"url":"https://saulabi.github.io/testcolabblog/gitInfo/","@type":"WebPage","headline":"gitInfo","description":"An easy to use blogging platform with support for Jupyter Notebooks.","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 <link rel="stylesheet" href="/testcolabblog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://saulabi.github.io/testcolabblog/feed.xml" title="hello world!" /><link rel="shortcut icon" type="image/x-icon" href="/testcolabblog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
@@ -66,24 +66,46 @@ window.onload = wrap_img;
 </header>
 <main class="page-content" aria-label="Content">
       <div class="wrapper">
-        <article class="post">
+        <img src="https://ghchart.rshah.org/saulabi" alt="" style="width: 660px; height: 100px;">
+<div id="repos">
+<script>
+// 비동기 작업을 위해 async function 선언
+const initRepo = async () =>{
+        const _username = 'saulabi'
+        
+        // 추가할 dom선택
+        const repoUl = document.getElementById("repos")
 
-  <header class="post-header">
-    <h1 class="post-title">Sample</h1>
-  </header>
+        // headers 설명 : 깃허브에 요청할 형식 지정
+        let response = await fetch('https://api.github.com/users/saulabi/repos',
+        {headers:{
+            'Accept' : 'application/vnd.github.v3+json'
+        }});
+        const repoJson = await response.json()
+        // repo받아온 내용 확인
+        // console.log(repoJson);
 
-  <div class="post-content">
-    <h1 id="hello-world">hello world</h1>
+        // json내용을 map을 이용해 각 dom을 만들고 추가
+        repoJson.map((repos)=>{
+            let h2Element = document.createElement("h2")
+            h2Element.textContent = repos.name
 
-<ul>
-  <li>hello</li>
-  <li>hello</li>
-  <li>hello</li>
-</ul>
+            let pElementDesc = document.createElement("p")
+            pElementDesc.textContent = "레포설명 : " + repos.description
 
-  </div>
+            let aElementURL = document.createElement("a")
+            aElementURL.href = repos.svn_url
+            aElementURL.textContent = repos.svn_url
 
-</article>
+            //각 요소를 <div id="repos">에 추가
+            repoUl.append(h2Element)
+            repoUl.append(pElementDesc)
+            repoUl.append(aElementURL)
+            repoUl.append(document.createElement("br"))
+        })
+    }
+    initRepo()
+</script>
 
       </div>
     </main><footer class="site-footer h-card">

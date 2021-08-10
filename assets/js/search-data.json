@@ -62,7 +62,9 @@
   
 
   
-      ,"page3": {
+
+  
+      ,"page4": {
           "title": "Sample",
           "content": "hello world . hello | hello | hello | .",
           "url": "https://saulabi.github.io/testcolabblog/sample/",
@@ -92,7 +94,7 @@
   
 
   
-      ,"page11": {
+      ,"page12": {
           "title": "",
           "content": "Sitemap: {{ “sitemap.xml” | absolute_url }} | .",
           "url": "https://saulabi.github.io/testcolabblog/robots.txt",
